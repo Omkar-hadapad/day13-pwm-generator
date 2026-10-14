@@ -1,0 +1,1142 @@
+ncsim> 
+ncsim> database -open waves -into waves.shm -default
+Created default SHM database waves
+ncsim> probe -create -shm day13_tb.A day13_tb.AND_Y day13_tb.B day13_tb.CIN day13_tb.FA_COUT day13_tb.FA_SUM day13_tb.HA_CARRY day13_tb.HA_SUM day13_tb.NOT_Y day13_tb.OR_Y day13_tb.XOR_Y day13_tb.clk day13_tb.comp_A day13_tb.comp_B day13_tb.comp_LT day13_tb.count_rtl day13_tb.count_structural day13_tb.counter_Q day13_tb.duty day13_tb.errors day13_tb.i day13_tb.inc_A day13_tb.inc_Y day13_tb.j day13_tb.k day13_tb.pwm_rtl day13_tb.pwm_structural day13_tb.reset
+Created probe 1
+ncsim> run
+
+================================================
+TEST 1 : BASIC GATES
+================================================
+TIME=0 | RESET=1 | DUTY= 0 | COUNT_STRUCT=xxxx | PWM_STRUCT=0 | COUNT_RTL=xxxx | PWM_RTL=x
+PASS :                         NOT GATE | Actual=1 Expected=1
+PASS :                         AND GATE | Actual=0 Expected=0
+PASS :                          OR GATE | Actual=0 Expected=0
+PASS :                         XOR GATE | Actual=0 Expected=0
+PASS :                         NOT GATE | Actual=1 Expected=1
+PASS :                         AND GATE | Actual=0 Expected=0
+PASS :                          OR GATE | Actual=1 Expected=1
+PASS :                         XOR GATE | Actual=1 Expected=1
+PASS :                         NOT GATE | Actual=0 Expected=0
+PASS :                         AND GATE | Actual=0 Expected=0
+PASS :                          OR GATE | Actual=1 Expected=1
+PASS :                         XOR GATE | Actual=1 Expected=1
+PASS :                         NOT GATE | Actual=0 Expected=0
+PASS :                         AND GATE | Actual=1 Expected=1
+PASS :                          OR GATE | Actual=1 Expected=1
+PASS :                         XOR GATE | Actual=0 Expected=0
+
+================================================
+TEST 2 : HALF ADDER
+================================================
+PASS :                   HALF ADDER SUM | Actual=0 Expected=0
+PASS :                 HALF ADDER CARRY | Actual=0 Expected=0
+TIME=5000 | RESET=1 | DUTY= 0 | COUNT_STRUCT=0000 | PWM_STRUCT=0 | COUNT_RTL=0000 | PWM_RTL=0
+PASS :                   HALF ADDER SUM | Actual=1 Expected=1
+PASS :                 HALF ADDER CARRY | Actual=0 Expected=0
+PASS :                   HALF ADDER SUM | Actual=1 Expected=1
+PASS :                 HALF ADDER CARRY | Actual=0 Expected=0
+PASS :                   HALF ADDER SUM | Actual=0 Expected=0
+PASS :                 HALF ADDER CARRY | Actual=1 Expected=1
+
+================================================
+TEST 3 : FULL ADDER
+================================================
+PASS :                   FULL ADDER SUM | Actual=0 Expected=0
+PASS :                  FULL ADDER COUT | Actual=0 Expected=0
+PASS :                   FULL ADDER SUM | Actual=1 Expected=1
+PASS :                  FULL ADDER COUT | Actual=0 Expected=0
+PASS :                   FULL ADDER SUM | Actual=1 Expected=1
+PASS :                  FULL ADDER COUT | Actual=0 Expected=0
+PASS :                   FULL ADDER SUM | Actual=0 Expected=0
+PASS :                  FULL ADDER COUT | Actual=1 Expected=1
+PASS :                   FULL ADDER SUM | Actual=1 Expected=1
+PASS :                  FULL ADDER COUT | Actual=0 Expected=0
+PASS :                   FULL ADDER SUM | Actual=0 Expected=0
+PASS :                  FULL ADDER COUT | Actual=1 Expected=1
+PASS :                   FULL ADDER SUM | Actual=0 Expected=0
+PASS :                  FULL ADDER COUT | Actual=1 Expected=1
+PASS :                   FULL ADDER SUM | Actual=1 Expected=1
+PASS :                  FULL ADDER COUT | Actual=1 Expected=1
+
+================================================
+TEST 4 : 4-BIT INCREMENTER
+================================================
+PASS :                4-BIT INCREMENTER | Actual=0001 Expected=0001
+PASS :                4-BIT INCREMENTER | Actual=0010 Expected=0010
+PASS :                4-BIT INCREMENTER | Actual=0011 Expected=0011
+PASS :                4-BIT INCREMENTER | Actual=0100 Expected=0100
+PASS :                4-BIT INCREMENTER | Actual=0101 Expected=0101
+PASS :                4-BIT INCREMENTER | Actual=0110 Expected=0110
+PASS :                4-BIT INCREMENTER | Actual=0111 Expected=0111
+PASS :                4-BIT INCREMENTER | Actual=1000 Expected=1000
+PASS :                4-BIT INCREMENTER | Actual=1001 Expected=1001
+PASS :                4-BIT INCREMENTER | Actual=1010 Expected=1010
+PASS :                4-BIT INCREMENTER | Actual=1011 Expected=1011
+PASS :                4-BIT INCREMENTER | Actual=1100 Expected=1100
+PASS :                4-BIT INCREMENTER | Actual=1101 Expected=1101
+PASS :                4-BIT INCREMENTER | Actual=1110 Expected=1110
+PASS :                4-BIT INCREMENTER | Actual=1111 Expected=1111
+PASS :                4-BIT INCREMENTER | Actual=0000 Expected=0000
+
+================================================
+TEST 5 : COUNTER RESET
+================================================
+PASS :                    COUNTER RESET | Actual=0000 Expected=0000
+
+================================================
+TEST 6 : COUNTER 0 TO 15
+================================================
+TIME=36000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0000 | PWM_STRUCT=0 | COUNT_RTL=0000 | PWM_RTL=0
+TIME=45000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0001 | PWM_STRUCT=0 | COUNT_RTL=0001 | PWM_RTL=0
+PASS :                    COUNTER COUNT | Actual=0001 Expected=0001
+TIME=55000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0010 | PWM_STRUCT=0 | COUNT_RTL=0010 | PWM_RTL=0
+PASS :                    COUNTER COUNT | Actual=0010 Expected=0010
+TIME=65000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0011 | PWM_STRUCT=0 | COUNT_RTL=0011 | PWM_RTL=0
+PASS :                    COUNTER COUNT | Actual=0011 Expected=0011
+TIME=75000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0100 | PWM_STRUCT=0 | COUNT_RTL=0100 | PWM_RTL=0
+PASS :                    COUNTER COUNT | Actual=0100 Expected=0100
+TIME=85000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0101 | PWM_STRUCT=0 | COUNT_RTL=0101 | PWM_RTL=0
+PASS :                    COUNTER COUNT | Actual=0101 Expected=0101
+TIME=95000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0110 | PWM_STRUCT=0 | COUNT_RTL=0110 | PWM_RTL=0
+PASS :                    COUNTER COUNT | Actual=0110 Expected=0110
+TIME=105000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0111 | PWM_STRUCT=0 | COUNT_RTL=0111 | PWM_RTL=0
+PASS :                    COUNTER COUNT | Actual=0111 Expected=0111
+TIME=115000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=1000 | PWM_STRUCT=0 | COUNT_RTL=1000 | PWM_RTL=0
+PASS :                    COUNTER COUNT | Actual=1000 Expected=1000
+TIME=125000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=1001 | PWM_STRUCT=0 | COUNT_RTL=1001 | PWM_RTL=0
+PASS :                    COUNTER COUNT | Actual=1001 Expected=1001
+TIME=135000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=1010 | PWM_STRUCT=0 | COUNT_RTL=1010 | PWM_RTL=0
+PASS :                    COUNTER COUNT | Actual=1010 Expected=1010
+TIME=145000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=1011 | PWM_STRUCT=0 | COUNT_RTL=1011 | PWM_RTL=0
+PASS :                    COUNTER COUNT | Actual=1011 Expected=1011
+TIME=155000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=1100 | PWM_STRUCT=0 | COUNT_RTL=1100 | PWM_RTL=0
+PASS :                    COUNTER COUNT | Actual=1100 Expected=1100
+TIME=165000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=1101 | PWM_STRUCT=0 | COUNT_RTL=1101 | PWM_RTL=0
+PASS :                    COUNTER COUNT | Actual=1101 Expected=1101
+TIME=175000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=1110 | PWM_STRUCT=0 | COUNT_RTL=1110 | PWM_RTL=0
+PASS :                    COUNTER COUNT | Actual=1110 Expected=1110
+TIME=185000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=1111 | PWM_STRUCT=0 | COUNT_RTL=1111 | PWM_RTL=0
+PASS :                    COUNTER COUNT | Actual=1111 Expected=1111
+TIME=195000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0000 | PWM_STRUCT=0 | COUNT_RTL=0000 | PWM_RTL=0
+PASS :                    COUNTER COUNT | Actual=0000 Expected=0000
+
+================================================
+TEST 7 : 4-BIT COMPARATOR
+================================================
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+TIME=205000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0001 | PWM_STRUCT=0 | COUNT_RTL=0001 | PWM_RTL=0
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+TIME=215000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0010 | PWM_STRUCT=0 | COUNT_RTL=0010 | PWM_RTL=0
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+TIME=225000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0011 | PWM_STRUCT=0 | COUNT_RTL=0011 | PWM_RTL=0
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+TIME=235000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0100 | PWM_STRUCT=0 | COUNT_RTL=0100 | PWM_RTL=0
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+TIME=245000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0101 | PWM_STRUCT=0 | COUNT_RTL=0101 | PWM_RTL=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+TIME=255000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0110 | PWM_STRUCT=0 | COUNT_RTL=0110 | PWM_RTL=0
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+TIME=265000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0111 | PWM_STRUCT=0 | COUNT_RTL=0111 | PWM_RTL=0
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+TIME=275000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=1000 | PWM_STRUCT=0 | COUNT_RTL=1000 | PWM_RTL=0
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+TIME=285000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=1001 | PWM_STRUCT=0 | COUNT_RTL=1001 | PWM_RTL=0
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+TIME=295000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=1010 | PWM_STRUCT=0 | COUNT_RTL=1010 | PWM_RTL=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+TIME=305000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=1011 | PWM_STRUCT=0 | COUNT_RTL=1011 | PWM_RTL=0
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+TIME=315000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=1100 | PWM_STRUCT=0 | COUNT_RTL=1100 | PWM_RTL=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+TIME=325000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=1101 | PWM_STRUCT=0 | COUNT_RTL=1101 | PWM_RTL=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+TIME=335000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=1110 | PWM_STRUCT=0 | COUNT_RTL=1110 | PWM_RTL=0
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+TIME=345000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=1111 | PWM_STRUCT=0 | COUNT_RTL=1111 | PWM_RTL=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+TIME=355000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0000 | PWM_STRUCT=0 | COUNT_RTL=0000 | PWM_RTL=0
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+TIME=365000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0001 | PWM_STRUCT=0 | COUNT_RTL=0001 | PWM_RTL=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+TIME=375000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0010 | PWM_STRUCT=0 | COUNT_RTL=0010 | PWM_RTL=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+TIME=385000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0011 | PWM_STRUCT=0 | COUNT_RTL=0011 | PWM_RTL=0
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+TIME=395000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0100 | PWM_STRUCT=0 | COUNT_RTL=0100 | PWM_RTL=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+TIME=405000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0101 | PWM_STRUCT=0 | COUNT_RTL=0101 | PWM_RTL=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+TIME=415000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0110 | PWM_STRUCT=0 | COUNT_RTL=0110 | PWM_RTL=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+TIME=425000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0111 | PWM_STRUCT=0 | COUNT_RTL=0111 | PWM_RTL=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+TIME=435000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=1000 | PWM_STRUCT=0 | COUNT_RTL=1000 | PWM_RTL=0
+PASS :                 COMPARATOR A < B | Actual=1 Expected=1
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+TIME=445000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=1001 | PWM_STRUCT=0 | COUNT_RTL=1001 | PWM_RTL=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+PASS :                COMPARATOR A >= B | Actual=0 Expected=0
+
+================================================
+TEST 8 : PWM RESET
+================================================
+TIME=452000 | RESET=1 | DUTY= 4 | COUNT_STRUCT=1001 | PWM_STRUCT=0 | COUNT_RTL=1001 | PWM_RTL=0
+TIME=455000 | RESET=1 | DUTY= 4 | COUNT_STRUCT=0000 | PWM_STRUCT=1 | COUNT_RTL=0000 | PWM_RTL=1
+PASS :       PWM STRUCTURAL RESET COUNT | Actual=0000 Expected=0000
+PASS :              PWM RTL RESET COUNT | Actual=0000 Expected=0000
+PASS : COUNTER STRUCTURAL = RTL | 0000
+PASS : PWM STRUCTURAL = RTL | 1
+
+================================================
+TEST 9 : PWM DUTY = 0
+================================================
+TIME=456000 | RESET=1 | DUTY= 0 | COUNT_STRUCT=0000 | PWM_STRUCT=0 | COUNT_RTL=0000 | PWM_RTL=0
+TIME=466000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0000 | PWM_STRUCT=0 | COUNT_RTL=0000 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=0000 Expected=0000
+PASS :                    PWM RTL COUNT | Actual=0000 Expected=0000
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 0000
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=475000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0001 | PWM_STRUCT=0 | COUNT_RTL=0001 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=0001 Expected=0001
+PASS :                    PWM RTL COUNT | Actual=0001 Expected=0001
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 0001
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=485000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0010 | PWM_STRUCT=0 | COUNT_RTL=0010 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=0010 Expected=0010
+PASS :                    PWM RTL COUNT | Actual=0010 Expected=0010
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 0010
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=495000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0011 | PWM_STRUCT=0 | COUNT_RTL=0011 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=0011 Expected=0011
+PASS :                    PWM RTL COUNT | Actual=0011 Expected=0011
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 0011
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=505000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0100 | PWM_STRUCT=0 | COUNT_RTL=0100 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=0100 Expected=0100
+PASS :                    PWM RTL COUNT | Actual=0100 Expected=0100
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 0100
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=515000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0101 | PWM_STRUCT=0 | COUNT_RTL=0101 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=0101 Expected=0101
+PASS :                    PWM RTL COUNT | Actual=0101 Expected=0101
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 0101
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=525000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0110 | PWM_STRUCT=0 | COUNT_RTL=0110 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=0110 Expected=0110
+PASS :                    PWM RTL COUNT | Actual=0110 Expected=0110
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 0110
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=535000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0111 | PWM_STRUCT=0 | COUNT_RTL=0111 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=0111 Expected=0111
+PASS :                    PWM RTL COUNT | Actual=0111 Expected=0111
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 0111
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=545000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=1000 | PWM_STRUCT=0 | COUNT_RTL=1000 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1000 Expected=1000
+PASS :                    PWM RTL COUNT | Actual=1000 Expected=1000
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1000
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=555000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=1001 | PWM_STRUCT=0 | COUNT_RTL=1001 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1001 Expected=1001
+PASS :                    PWM RTL COUNT | Actual=1001 Expected=1001
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1001
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=565000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=1010 | PWM_STRUCT=0 | COUNT_RTL=1010 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1010 Expected=1010
+PASS :                    PWM RTL COUNT | Actual=1010 Expected=1010
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1010
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=575000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=1011 | PWM_STRUCT=0 | COUNT_RTL=1011 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1011 Expected=1011
+PASS :                    PWM RTL COUNT | Actual=1011 Expected=1011
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1011
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=585000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=1100 | PWM_STRUCT=0 | COUNT_RTL=1100 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1100 Expected=1100
+PASS :                    PWM RTL COUNT | Actual=1100 Expected=1100
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1100
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=595000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=1101 | PWM_STRUCT=0 | COUNT_RTL=1101 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1101 Expected=1101
+PASS :                    PWM RTL COUNT | Actual=1101 Expected=1101
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1101
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=605000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=1110 | PWM_STRUCT=0 | COUNT_RTL=1110 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1110 Expected=1110
+PASS :                    PWM RTL COUNT | Actual=1110 Expected=1110
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1110
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=615000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=1111 | PWM_STRUCT=0 | COUNT_RTL=1111 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1111 Expected=1111
+PASS :                    PWM RTL COUNT | Actual=1111 Expected=1111
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1111
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=625000 | RESET=0 | DUTY= 0 | COUNT_STRUCT=0000 | PWM_STRUCT=0 | COUNT_RTL=0000 | PWM_RTL=0
+
+================================================
+TEST 10 : PWM DUTY = 1
+================================================
+TIME=626000 | RESET=1 | DUTY= 1 | COUNT_STRUCT=0000 | PWM_STRUCT=1 | COUNT_RTL=0000 | PWM_RTL=1
+TIME=636000 | RESET=0 | DUTY= 1 | COUNT_STRUCT=0000 | PWM_STRUCT=1 | COUNT_RTL=0000 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=0000 Expected=0000
+PASS :                    PWM RTL COUNT | Actual=0000 Expected=0000
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 0000
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=645000 | RESET=0 | DUTY= 1 | COUNT_STRUCT=0001 | PWM_STRUCT=0 | COUNT_RTL=0001 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=0001 Expected=0001
+PASS :                    PWM RTL COUNT | Actual=0001 Expected=0001
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 0001
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=655000 | RESET=0 | DUTY= 1 | COUNT_STRUCT=0010 | PWM_STRUCT=0 | COUNT_RTL=0010 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=0010 Expected=0010
+PASS :                    PWM RTL COUNT | Actual=0010 Expected=0010
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 0010
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=665000 | RESET=0 | DUTY= 1 | COUNT_STRUCT=0011 | PWM_STRUCT=0 | COUNT_RTL=0011 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=0011 Expected=0011
+PASS :                    PWM RTL COUNT | Actual=0011 Expected=0011
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 0011
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=675000 | RESET=0 | DUTY= 1 | COUNT_STRUCT=0100 | PWM_STRUCT=0 | COUNT_RTL=0100 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=0100 Expected=0100
+PASS :                    PWM RTL COUNT | Actual=0100 Expected=0100
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 0100
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=685000 | RESET=0 | DUTY= 1 | COUNT_STRUCT=0101 | PWM_STRUCT=0 | COUNT_RTL=0101 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=0101 Expected=0101
+PASS :                    PWM RTL COUNT | Actual=0101 Expected=0101
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 0101
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=695000 | RESET=0 | DUTY= 1 | COUNT_STRUCT=0110 | PWM_STRUCT=0 | COUNT_RTL=0110 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=0110 Expected=0110
+PASS :                    PWM RTL COUNT | Actual=0110 Expected=0110
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 0110
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=705000 | RESET=0 | DUTY= 1 | COUNT_STRUCT=0111 | PWM_STRUCT=0 | COUNT_RTL=0111 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=0111 Expected=0111
+PASS :                    PWM RTL COUNT | Actual=0111 Expected=0111
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 0111
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=715000 | RESET=0 | DUTY= 1 | COUNT_STRUCT=1000 | PWM_STRUCT=0 | COUNT_RTL=1000 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1000 Expected=1000
+PASS :                    PWM RTL COUNT | Actual=1000 Expected=1000
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1000
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=725000 | RESET=0 | DUTY= 1 | COUNT_STRUCT=1001 | PWM_STRUCT=0 | COUNT_RTL=1001 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1001 Expected=1001
+PASS :                    PWM RTL COUNT | Actual=1001 Expected=1001
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1001
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=735000 | RESET=0 | DUTY= 1 | COUNT_STRUCT=1010 | PWM_STRUCT=0 | COUNT_RTL=1010 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1010 Expected=1010
+PASS :                    PWM RTL COUNT | Actual=1010 Expected=1010
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1010
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=745000 | RESET=0 | DUTY= 1 | COUNT_STRUCT=1011 | PWM_STRUCT=0 | COUNT_RTL=1011 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1011 Expected=1011
+PASS :                    PWM RTL COUNT | Actual=1011 Expected=1011
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1011
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=755000 | RESET=0 | DUTY= 1 | COUNT_STRUCT=1100 | PWM_STRUCT=0 | COUNT_RTL=1100 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1100 Expected=1100
+PASS :                    PWM RTL COUNT | Actual=1100 Expected=1100
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1100
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=765000 | RESET=0 | DUTY= 1 | COUNT_STRUCT=1101 | PWM_STRUCT=0 | COUNT_RTL=1101 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1101 Expected=1101
+PASS :                    PWM RTL COUNT | Actual=1101 Expected=1101
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1101
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=775000 | RESET=0 | DUTY= 1 | COUNT_STRUCT=1110 | PWM_STRUCT=0 | COUNT_RTL=1110 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1110 Expected=1110
+PASS :                    PWM RTL COUNT | Actual=1110 Expected=1110
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1110
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=785000 | RESET=0 | DUTY= 1 | COUNT_STRUCT=1111 | PWM_STRUCT=0 | COUNT_RTL=1111 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1111 Expected=1111
+PASS :                    PWM RTL COUNT | Actual=1111 Expected=1111
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1111
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=795000 | RESET=0 | DUTY= 1 | COUNT_STRUCT=0000 | PWM_STRUCT=1 | COUNT_RTL=0000 | PWM_RTL=1
+
+================================================
+TEST 11 : PWM DUTY = 4
+================================================
+TIME=796000 | RESET=1 | DUTY= 4 | COUNT_STRUCT=0000 | PWM_STRUCT=1 | COUNT_RTL=0000 | PWM_RTL=1
+TIME=806000 | RESET=0 | DUTY= 4 | COUNT_STRUCT=0000 | PWM_STRUCT=1 | COUNT_RTL=0000 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=0000 Expected=0000
+PASS :                    PWM RTL COUNT | Actual=0000 Expected=0000
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 0000
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=815000 | RESET=0 | DUTY= 4 | COUNT_STRUCT=0001 | PWM_STRUCT=1 | COUNT_RTL=0001 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=0001 Expected=0001
+PASS :                    PWM RTL COUNT | Actual=0001 Expected=0001
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 0001
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=825000 | RESET=0 | DUTY= 4 | COUNT_STRUCT=0010 | PWM_STRUCT=1 | COUNT_RTL=0010 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=0010 Expected=0010
+PASS :                    PWM RTL COUNT | Actual=0010 Expected=0010
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 0010
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=835000 | RESET=0 | DUTY= 4 | COUNT_STRUCT=0011 | PWM_STRUCT=1 | COUNT_RTL=0011 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=0011 Expected=0011
+PASS :                    PWM RTL COUNT | Actual=0011 Expected=0011
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 0011
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=845000 | RESET=0 | DUTY= 4 | COUNT_STRUCT=0100 | PWM_STRUCT=0 | COUNT_RTL=0100 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=0100 Expected=0100
+PASS :                    PWM RTL COUNT | Actual=0100 Expected=0100
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 0100
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=855000 | RESET=0 | DUTY= 4 | COUNT_STRUCT=0101 | PWM_STRUCT=0 | COUNT_RTL=0101 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=0101 Expected=0101
+PASS :                    PWM RTL COUNT | Actual=0101 Expected=0101
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 0101
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=865000 | RESET=0 | DUTY= 4 | COUNT_STRUCT=0110 | PWM_STRUCT=0 | COUNT_RTL=0110 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=0110 Expected=0110
+PASS :                    PWM RTL COUNT | Actual=0110 Expected=0110
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 0110
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=875000 | RESET=0 | DUTY= 4 | COUNT_STRUCT=0111 | PWM_STRUCT=0 | COUNT_RTL=0111 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=0111 Expected=0111
+PASS :                    PWM RTL COUNT | Actual=0111 Expected=0111
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 0111
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=885000 | RESET=0 | DUTY= 4 | COUNT_STRUCT=1000 | PWM_STRUCT=0 | COUNT_RTL=1000 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1000 Expected=1000
+PASS :                    PWM RTL COUNT | Actual=1000 Expected=1000
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1000
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=895000 | RESET=0 | DUTY= 4 | COUNT_STRUCT=1001 | PWM_STRUCT=0 | COUNT_RTL=1001 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1001 Expected=1001
+PASS :                    PWM RTL COUNT | Actual=1001 Expected=1001
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1001
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=905000 | RESET=0 | DUTY= 4 | COUNT_STRUCT=1010 | PWM_STRUCT=0 | COUNT_RTL=1010 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1010 Expected=1010
+PASS :                    PWM RTL COUNT | Actual=1010 Expected=1010
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1010
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=915000 | RESET=0 | DUTY= 4 | COUNT_STRUCT=1011 | PWM_STRUCT=0 | COUNT_RTL=1011 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1011 Expected=1011
+PASS :                    PWM RTL COUNT | Actual=1011 Expected=1011
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1011
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=925000 | RESET=0 | DUTY= 4 | COUNT_STRUCT=1100 | PWM_STRUCT=0 | COUNT_RTL=1100 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1100 Expected=1100
+PASS :                    PWM RTL COUNT | Actual=1100 Expected=1100
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1100
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=935000 | RESET=0 | DUTY= 4 | COUNT_STRUCT=1101 | PWM_STRUCT=0 | COUNT_RTL=1101 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1101 Expected=1101
+PASS :                    PWM RTL COUNT | Actual=1101 Expected=1101
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1101
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=945000 | RESET=0 | DUTY= 4 | COUNT_STRUCT=1110 | PWM_STRUCT=0 | COUNT_RTL=1110 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1110 Expected=1110
+PASS :                    PWM RTL COUNT | Actual=1110 Expected=1110
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1110
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=955000 | RESET=0 | DUTY= 4 | COUNT_STRUCT=1111 | PWM_STRUCT=0 | COUNT_RTL=1111 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1111 Expected=1111
+PASS :                    PWM RTL COUNT | Actual=1111 Expected=1111
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1111
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=965000 | RESET=0 | DUTY= 4 | COUNT_STRUCT=0000 | PWM_STRUCT=1 | COUNT_RTL=0000 | PWM_RTL=1
+
+================================================
+TEST 12 : PWM DUTY = 8
+================================================
+TIME=966000 | RESET=1 | DUTY= 8 | COUNT_STRUCT=0000 | PWM_STRUCT=1 | COUNT_RTL=0000 | PWM_RTL=1
+TIME=976000 | RESET=0 | DUTY= 8 | COUNT_STRUCT=0000 | PWM_STRUCT=1 | COUNT_RTL=0000 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=0000 Expected=0000
+PASS :                    PWM RTL COUNT | Actual=0000 Expected=0000
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 0000
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=985000 | RESET=0 | DUTY= 8 | COUNT_STRUCT=0001 | PWM_STRUCT=1 | COUNT_RTL=0001 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=0001 Expected=0001
+PASS :                    PWM RTL COUNT | Actual=0001 Expected=0001
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 0001
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=995000 | RESET=0 | DUTY= 8 | COUNT_STRUCT=0010 | PWM_STRUCT=1 | COUNT_RTL=0010 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=0010 Expected=0010
+PASS :                    PWM RTL COUNT | Actual=0010 Expected=0010
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 0010
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1005000 | RESET=0 | DUTY= 8 | COUNT_STRUCT=0011 | PWM_STRUCT=1 | COUNT_RTL=0011 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=0011 Expected=0011
+PASS :                    PWM RTL COUNT | Actual=0011 Expected=0011
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 0011
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1015000 | RESET=0 | DUTY= 8 | COUNT_STRUCT=0100 | PWM_STRUCT=1 | COUNT_RTL=0100 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=0100 Expected=0100
+PASS :                    PWM RTL COUNT | Actual=0100 Expected=0100
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 0100
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1025000 | RESET=0 | DUTY= 8 | COUNT_STRUCT=0101 | PWM_STRUCT=1 | COUNT_RTL=0101 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=0101 Expected=0101
+PASS :                    PWM RTL COUNT | Actual=0101 Expected=0101
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 0101
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1035000 | RESET=0 | DUTY= 8 | COUNT_STRUCT=0110 | PWM_STRUCT=1 | COUNT_RTL=0110 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=0110 Expected=0110
+PASS :                    PWM RTL COUNT | Actual=0110 Expected=0110
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 0110
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1045000 | RESET=0 | DUTY= 8 | COUNT_STRUCT=0111 | PWM_STRUCT=1 | COUNT_RTL=0111 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=0111 Expected=0111
+PASS :                    PWM RTL COUNT | Actual=0111 Expected=0111
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 0111
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1055000 | RESET=0 | DUTY= 8 | COUNT_STRUCT=1000 | PWM_STRUCT=0 | COUNT_RTL=1000 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1000 Expected=1000
+PASS :                    PWM RTL COUNT | Actual=1000 Expected=1000
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1000
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=1065000 | RESET=0 | DUTY= 8 | COUNT_STRUCT=1001 | PWM_STRUCT=0 | COUNT_RTL=1001 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1001 Expected=1001
+PASS :                    PWM RTL COUNT | Actual=1001 Expected=1001
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1001
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=1075000 | RESET=0 | DUTY= 8 | COUNT_STRUCT=1010 | PWM_STRUCT=0 | COUNT_RTL=1010 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1010 Expected=1010
+PASS :                    PWM RTL COUNT | Actual=1010 Expected=1010
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1010
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=1085000 | RESET=0 | DUTY= 8 | COUNT_STRUCT=1011 | PWM_STRUCT=0 | COUNT_RTL=1011 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1011 Expected=1011
+PASS :                    PWM RTL COUNT | Actual=1011 Expected=1011
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1011
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=1095000 | RESET=0 | DUTY= 8 | COUNT_STRUCT=1100 | PWM_STRUCT=0 | COUNT_RTL=1100 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1100 Expected=1100
+PASS :                    PWM RTL COUNT | Actual=1100 Expected=1100
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1100
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=1105000 | RESET=0 | DUTY= 8 | COUNT_STRUCT=1101 | PWM_STRUCT=0 | COUNT_RTL=1101 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1101 Expected=1101
+PASS :                    PWM RTL COUNT | Actual=1101 Expected=1101
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1101
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=1115000 | RESET=0 | DUTY= 8 | COUNT_STRUCT=1110 | PWM_STRUCT=0 | COUNT_RTL=1110 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1110 Expected=1110
+PASS :                    PWM RTL COUNT | Actual=1110 Expected=1110
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1110
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=1125000 | RESET=0 | DUTY= 8 | COUNT_STRUCT=1111 | PWM_STRUCT=0 | COUNT_RTL=1111 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1111 Expected=1111
+PASS :                    PWM RTL COUNT | Actual=1111 Expected=1111
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1111
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=1135000 | RESET=0 | DUTY= 8 | COUNT_STRUCT=0000 | PWM_STRUCT=1 | COUNT_RTL=0000 | PWM_RTL=1
+
+================================================
+TEST 13 : PWM DUTY = 12
+================================================
+TIME=1136000 | RESET=1 | DUTY=12 | COUNT_STRUCT=0000 | PWM_STRUCT=1 | COUNT_RTL=0000 | PWM_RTL=1
+TIME=1146000 | RESET=0 | DUTY=12 | COUNT_STRUCT=0000 | PWM_STRUCT=1 | COUNT_RTL=0000 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=0000 Expected=0000
+PASS :                    PWM RTL COUNT | Actual=0000 Expected=0000
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 0000
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1155000 | RESET=0 | DUTY=12 | COUNT_STRUCT=0001 | PWM_STRUCT=1 | COUNT_RTL=0001 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=0001 Expected=0001
+PASS :                    PWM RTL COUNT | Actual=0001 Expected=0001
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 0001
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1165000 | RESET=0 | DUTY=12 | COUNT_STRUCT=0010 | PWM_STRUCT=1 | COUNT_RTL=0010 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=0010 Expected=0010
+PASS :                    PWM RTL COUNT | Actual=0010 Expected=0010
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 0010
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1175000 | RESET=0 | DUTY=12 | COUNT_STRUCT=0011 | PWM_STRUCT=1 | COUNT_RTL=0011 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=0011 Expected=0011
+PASS :                    PWM RTL COUNT | Actual=0011 Expected=0011
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 0011
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1185000 | RESET=0 | DUTY=12 | COUNT_STRUCT=0100 | PWM_STRUCT=1 | COUNT_RTL=0100 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=0100 Expected=0100
+PASS :                    PWM RTL COUNT | Actual=0100 Expected=0100
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 0100
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1195000 | RESET=0 | DUTY=12 | COUNT_STRUCT=0101 | PWM_STRUCT=1 | COUNT_RTL=0101 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=0101 Expected=0101
+PASS :                    PWM RTL COUNT | Actual=0101 Expected=0101
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 0101
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1205000 | RESET=0 | DUTY=12 | COUNT_STRUCT=0110 | PWM_STRUCT=1 | COUNT_RTL=0110 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=0110 Expected=0110
+PASS :                    PWM RTL COUNT | Actual=0110 Expected=0110
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 0110
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1215000 | RESET=0 | DUTY=12 | COUNT_STRUCT=0111 | PWM_STRUCT=1 | COUNT_RTL=0111 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=0111 Expected=0111
+PASS :                    PWM RTL COUNT | Actual=0111 Expected=0111
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 0111
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1225000 | RESET=0 | DUTY=12 | COUNT_STRUCT=1000 | PWM_STRUCT=1 | COUNT_RTL=1000 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=1000 Expected=1000
+PASS :                    PWM RTL COUNT | Actual=1000 Expected=1000
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 1000
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1235000 | RESET=0 | DUTY=12 | COUNT_STRUCT=1001 | PWM_STRUCT=1 | COUNT_RTL=1001 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=1001 Expected=1001
+PASS :                    PWM RTL COUNT | Actual=1001 Expected=1001
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 1001
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1245000 | RESET=0 | DUTY=12 | COUNT_STRUCT=1010 | PWM_STRUCT=1 | COUNT_RTL=1010 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=1010 Expected=1010
+PASS :                    PWM RTL COUNT | Actual=1010 Expected=1010
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 1010
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1255000 | RESET=0 | DUTY=12 | COUNT_STRUCT=1011 | PWM_STRUCT=1 | COUNT_RTL=1011 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=1011 Expected=1011
+PASS :                    PWM RTL COUNT | Actual=1011 Expected=1011
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 1011
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1265000 | RESET=0 | DUTY=12 | COUNT_STRUCT=1100 | PWM_STRUCT=0 | COUNT_RTL=1100 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1100 Expected=1100
+PASS :                    PWM RTL COUNT | Actual=1100 Expected=1100
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1100
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=1275000 | RESET=0 | DUTY=12 | COUNT_STRUCT=1101 | PWM_STRUCT=0 | COUNT_RTL=1101 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1101 Expected=1101
+PASS :                    PWM RTL COUNT | Actual=1101 Expected=1101
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1101
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=1285000 | RESET=0 | DUTY=12 | COUNT_STRUCT=1110 | PWM_STRUCT=0 | COUNT_RTL=1110 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1110 Expected=1110
+PASS :                    PWM RTL COUNT | Actual=1110 Expected=1110
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1110
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=1295000 | RESET=0 | DUTY=12 | COUNT_STRUCT=1111 | PWM_STRUCT=0 | COUNT_RTL=1111 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1111 Expected=1111
+PASS :                    PWM RTL COUNT | Actual=1111 Expected=1111
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1111
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=1305000 | RESET=0 | DUTY=12 | COUNT_STRUCT=0000 | PWM_STRUCT=1 | COUNT_RTL=0000 | PWM_RTL=1
+
+================================================
+TEST 14 : PWM DUTY = 15
+================================================
+TIME=1306000 | RESET=1 | DUTY=15 | COUNT_STRUCT=0000 | PWM_STRUCT=1 | COUNT_RTL=0000 | PWM_RTL=1
+TIME=1316000 | RESET=0 | DUTY=15 | COUNT_STRUCT=0000 | PWM_STRUCT=1 | COUNT_RTL=0000 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=0000 Expected=0000
+PASS :                    PWM RTL COUNT | Actual=0000 Expected=0000
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 0000
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1325000 | RESET=0 | DUTY=15 | COUNT_STRUCT=0001 | PWM_STRUCT=1 | COUNT_RTL=0001 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=0001 Expected=0001
+PASS :                    PWM RTL COUNT | Actual=0001 Expected=0001
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 0001
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1335000 | RESET=0 | DUTY=15 | COUNT_STRUCT=0010 | PWM_STRUCT=1 | COUNT_RTL=0010 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=0010 Expected=0010
+PASS :                    PWM RTL COUNT | Actual=0010 Expected=0010
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 0010
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1345000 | RESET=0 | DUTY=15 | COUNT_STRUCT=0011 | PWM_STRUCT=1 | COUNT_RTL=0011 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=0011 Expected=0011
+PASS :                    PWM RTL COUNT | Actual=0011 Expected=0011
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 0011
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1355000 | RESET=0 | DUTY=15 | COUNT_STRUCT=0100 | PWM_STRUCT=1 | COUNT_RTL=0100 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=0100 Expected=0100
+PASS :                    PWM RTL COUNT | Actual=0100 Expected=0100
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 0100
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1365000 | RESET=0 | DUTY=15 | COUNT_STRUCT=0101 | PWM_STRUCT=1 | COUNT_RTL=0101 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=0101 Expected=0101
+PASS :                    PWM RTL COUNT | Actual=0101 Expected=0101
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 0101
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1375000 | RESET=0 | DUTY=15 | COUNT_STRUCT=0110 | PWM_STRUCT=1 | COUNT_RTL=0110 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=0110 Expected=0110
+PASS :                    PWM RTL COUNT | Actual=0110 Expected=0110
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 0110
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1385000 | RESET=0 | DUTY=15 | COUNT_STRUCT=0111 | PWM_STRUCT=1 | COUNT_RTL=0111 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=0111 Expected=0111
+PASS :                    PWM RTL COUNT | Actual=0111 Expected=0111
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 0111
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1395000 | RESET=0 | DUTY=15 | COUNT_STRUCT=1000 | PWM_STRUCT=1 | COUNT_RTL=1000 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=1000 Expected=1000
+PASS :                    PWM RTL COUNT | Actual=1000 Expected=1000
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 1000
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1405000 | RESET=0 | DUTY=15 | COUNT_STRUCT=1001 | PWM_STRUCT=1 | COUNT_RTL=1001 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=1001 Expected=1001
+PASS :                    PWM RTL COUNT | Actual=1001 Expected=1001
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 1001
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1415000 | RESET=0 | DUTY=15 | COUNT_STRUCT=1010 | PWM_STRUCT=1 | COUNT_RTL=1010 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=1010 Expected=1010
+PASS :                    PWM RTL COUNT | Actual=1010 Expected=1010
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 1010
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1425000 | RESET=0 | DUTY=15 | COUNT_STRUCT=1011 | PWM_STRUCT=1 | COUNT_RTL=1011 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=1011 Expected=1011
+PASS :                    PWM RTL COUNT | Actual=1011 Expected=1011
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 1011
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1435000 | RESET=0 | DUTY=15 | COUNT_STRUCT=1100 | PWM_STRUCT=1 | COUNT_RTL=1100 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=1100 Expected=1100
+PASS :                    PWM RTL COUNT | Actual=1100 Expected=1100
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 1100
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1445000 | RESET=0 | DUTY=15 | COUNT_STRUCT=1101 | PWM_STRUCT=1 | COUNT_RTL=1101 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=1101 Expected=1101
+PASS :                    PWM RTL COUNT | Actual=1101 Expected=1101
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 1101
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1455000 | RESET=0 | DUTY=15 | COUNT_STRUCT=1110 | PWM_STRUCT=1 | COUNT_RTL=1110 | PWM_RTL=1
+PASS :             PWM STRUCTURAL COUNT | Actual=1110 Expected=1110
+PASS :                    PWM RTL COUNT | Actual=1110 Expected=1110
+PASS :            PWM STRUCTURAL OUTPUT | Actual=1 Expected=1
+PASS :                   PWM RTL OUTPUT | Actual=1 Expected=1
+PASS : COUNTER STRUCTURAL = RTL | 1110
+PASS : PWM STRUCTURAL = RTL | 1
+TIME=1465000 | RESET=0 | DUTY=15 | COUNT_STRUCT=1111 | PWM_STRUCT=0 | COUNT_RTL=1111 | PWM_RTL=0
+PASS :             PWM STRUCTURAL COUNT | Actual=1111 Expected=1111
+PASS :                    PWM RTL COUNT | Actual=1111 Expected=1111
+PASS :            PWM STRUCTURAL OUTPUT | Actual=0 Expected=0
+PASS :                   PWM RTL OUTPUT | Actual=0 Expected=0
+PASS : COUNTER STRUCTURAL = RTL | 1111
+PASS : PWM STRUCTURAL = RTL | 0
+TIME=1475000 | RESET=0 | DUTY=15 | COUNT_STRUCT=0000 | PWM_STRUCT=1 | COUNT_RTL=0000 | PWM_RTL=1
+
+================================================
+DAY 13 VERIFICATION SUMMARY
+================================================
+
+***********************************************
+*                                             *
+*       DAY 13 : ALL TESTS PASSED            *
+*                                             *
+***********************************************
+
+TOTAL ERRORS = 0
+
+TIME=1485000 | RESET=0 | DUTY=15 | COUNT_STRUCT=0001 | PWM_STRUCT=1 | COUNT_RTL=0001 | PWM_RTL=1
+Simulation complete via $finish(1) at time 1486 NS + 0
+./day13_tb.v:993     $finish;
+ncsim> 
